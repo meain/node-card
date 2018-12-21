@@ -22,7 +22,6 @@
   "author": "Abin Simon <abinsimon10@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@buzuli/color": "^2.1.0",
     "boxen": "^2.1.0"
   }
 }

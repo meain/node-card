@@ -2,4 +2,4 @@
 
 ![screenshot](https://i.imgur.com/DyVV6Ss.png)
 
-> a lot of code stolen from [joeledwards](https://github.com/joeledwards/node-card)
+> parts of code stolen from [joeledwards](https://github.com/joeledwards/node-card) and idea from [bnb](https://github.com/bnb/bitandbang)

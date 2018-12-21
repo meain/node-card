@@ -1,0 +1,28 @@
+{
+  "name": "meain",
+  "version": "1.0.1",
+  "description": "Contact card for @meain",
+  "main": "index.js",
+  "bin": {
+    "card": "./bin/card.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meain/node-card"
+  },
+  "keywords": [
+    "contact",
+    "card",
+    "info",
+    "meain"
+  ],
+  "author": "Abin Simon <abinsimon10@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@buzuli/color": "^2.1.0",
+    "boxen": "^2.1.0"
+  }
+}

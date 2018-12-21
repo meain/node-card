@@ -13,10 +13,10 @@ const lc = c.white.bold;
 
 const spacer = { label: "", value: "" };
 const data = {
-  handle: {
+  me: {
     center: c.white(`Abin Simon ${c.grey("|")} ${c.green("@meain")}`)
   },
-  me: {
+  work: {
     center: c.white(`Full stack developer ${c.blue("@Saama")}`)
   },
   npm: {
@@ -49,8 +49,8 @@ const data = {
 };
 
 const card = [
-  data.handle,
   data.me,
+  data.work,
   spacer,
   data.npm,
   data.github,

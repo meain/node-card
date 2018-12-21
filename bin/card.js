@@ -13,17 +13,11 @@ const lc = c.white.bold;
 
 const spacer = { label: "", value: "" };
 const data = {
-  name: {
-    label: "",
-    value: c.grey(`${c.white.bold("Abin Simon")} | ${c.green("@meain")}`)
+  handle: {
+    center: c.white(`Abin Simon ${c.grey("|")} ${c.green("@meain")}`)
   },
-  work: {
-    label: "",
-    value: c.white(`Full stack developer @ ${c.blue("Saama")}`)
-  },
-  email: {
-    label: "email 📧",
-    value: c.blue(`${c.green("abinsimon10")}@gmail.com`)
+  me: {
+    center: c.white(`Full stack developer ${c.blue("@Saama")}`)
   },
   npm: {
     label: "npm 📦",
@@ -44,28 +38,52 @@ const data = {
   npx: {
     label: "$",
     value: c.red(`npx ${c.white("meain")}`)
+  },
+  web: {
+    center: c.white(
+      `${c.green("abinsimon10")}@gmail.com ${c.grey("|")} ${c.green(
+        "meain"
+      )}.github.io`
+    )
   }
 };
 
 const card = [
-  data.name,
-  data.work,
+  data.handle,
+  data.me,
   spacer,
-  data.email,
   data.npm,
   data.github,
   data.twitter,
-  data.linkedin
+  data.linkedin,
+  spacer,
+  data.web
 ];
 
-const maxLabelLen = Object.values(data).reduce(
-  (m, d) => Math.max(m, d.label.length),
-  0
-);
+const clean = text => text.replace(/\x1b\[[;\d]*[A-Za-z]/g, "");
+
+const maxLen = Object.values(data).reduce((m, d) => {
+  const { label = "", value = "", center = "" } = d;
+  return Math.max(
+    m,
+    clean(label).length + clean(value).length + clean(center).length
+  );
+}, 0);
+
+const maxLabelLen = Object.values(data).reduce((m, d) => {
+  const { label = "", value = "", center = "" } = d;
+  return Math.max(m, clean(label).length);
+}, 0);
+
 const text = card
-  .map(({ label, value }) => {
-    const pad = " ".repeat(maxLabelLen - label.length);
-    return c.grey(`${pad}${label}  ${value}`);
+  .map(({ label = "", value = "", center = "" }) => {
+    if (center.length > 0) {
+      const pad = " ".repeat((maxLen - clean(center).length) / 2);
+      return c.grey(`${pad}${center}`);
+    } else {
+      const pad = " ".repeat(maxLabelLen - clean(label).length);
+      return c.grey(`${pad}${label}  ${value}`);
+    }
   })
   .join("\n");
 

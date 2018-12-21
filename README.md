@@ -1,4 +1,4 @@
-# npx meain
+# `$` `npx meain`
 
 ![screenshot](https://i.imgur.com/xgopB1v.png)
 

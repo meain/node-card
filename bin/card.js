@@ -43,7 +43,7 @@ const data = {
     center: c.white(
       `${c.green("abinsimon10")}@gmail.com ${c.grey("|")} ${c.green(
         "meain"
-      )}.github.io`
+      )}.io`
     )
   }
 };

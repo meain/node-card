@@ -43,7 +43,7 @@ const data = {
     center: c.white(
       `${c.green("abinsimon10")}@gmail.com ${c.grey("|")} ${c.green(
         "meain"
-      )}.io`
+      )}.github.io`
     )
   }
 };
@@ -87,4 +87,14 @@ const text = card
   })
   .join("\n");
 
-console.info(c.green(boxen(text, boxOptions)));
+const CURSOR_UP_ONE = "\x1b[1A";
+const ERASE_LINE = "\x1b[2K";
+
+let count = 0;
+const funs = [c.green, c.blue, c.white, c.grey, c.red, c.yellow, c.orange, c.purple];
+setInterval(() => {
+  const fun = funs[count % funs.length];
+  count++;
+  console.info(fun(boxen(text, boxOptions)));
+  for (let i = 0; i < 15; i++) process.stdout.write(CURSOR_UP_ONE);
+}, 200);

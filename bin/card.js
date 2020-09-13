@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
+
+const c = require('chalk')
 const boxen = require("boxen");
-const c = require("./color");
 
 const boxOptions = {
   padding: 1,
@@ -9,15 +10,13 @@ const boxOptions = {
   bordStyle: "round"
 };
 
-const lc = c.white.bold;
-
 const spacer = { label: "", value: "" };
 const data = {
   me: {
-    center: c.white(`Abin Simon ${c.grey("|")} ${c.green("@meain")}`)
+    center: `Abin Simon ${c.grey("|")} ${c.green("@meain")}`
   },
   work: {
-    center: c.white(`Full stack developer ${c.blue("@Saama")}`)
+    center: `Research Engineer ${c.blue("@Saama")}`
   },
   npm: {
     label: "npm 📦",
@@ -37,14 +36,12 @@ const data = {
   },
   npx: {
     label: "$",
-    value: c.red(`npx ${c.white("meain")}`)
+    value: c.red(`npx meain`)
   },
   web: {
-    center: c.white(
-      `${c.green("abinsimon10")}@gmail.com ${c.grey("|")} ${c.green(
-        "meain"
-      )}.io`
-    )
+    center: `${c.green("mail")}@meain.io ${c.grey("|")} ${c.green(
+      "meain"
+    )}.io`
   }
 };
 
